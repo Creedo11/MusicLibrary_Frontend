@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import MusicTable from './MusicTable/MusicTable';
-import CreateSong from './CreateSong/CreateSong';
+import MusicTable from './Components/MusicTable/MusicTable';
+import CreateSong from './Components/CreateSong/CreateSong';
 
 function App() {
 
