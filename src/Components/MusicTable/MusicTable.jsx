@@ -1,3 +1,4 @@
+import DeleteButton from "../DeleteButton/DeleteButton";
 
 const MusicTable = (props) => {
 
@@ -24,6 +25,7 @@ const MusicTable = (props) => {
                                 <td>{song.album}</td>
                                 <td>{song.genre}</td>
                                 <td>{song.release_date}</td>
+                                <td><DeleteButton id={song.id} getAllSongs={props.getAllSongs}/></td>
                             </tr>
                         )
                     })}

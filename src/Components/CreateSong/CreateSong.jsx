@@ -5,6 +5,7 @@ const CreateSong = (props) => {
 
 async function CreateNewSong (newSong){
     const response = await axios.post("http://127.0.0.1:8000/api/music/", newSong)
+    console.log(response.data)
     props.getAllSongs()
 }
 

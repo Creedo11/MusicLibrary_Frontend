@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <MusicTable songs={songs}/>
+      <MusicTable songs={songs} getAllSongs={getAllSongs}/>
       <CreateSong getAllSongs={getAllSongs}/>
     </div>
   );
