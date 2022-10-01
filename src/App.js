@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import MusicTable from './MusicTable/MusicTable';
 
 function App() {
 
-  const [song, setSongs] = useState([]);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     getAllSongs();
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <div>
-      Hello World 
+      <MusicTable songs={songs}/>
     </div>
   );
 }
