@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable';
 import CreateSong from './Components/CreateSong/CreateSong';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div>
+      <SearchBar songs={songs} setSongs={setSongs}/>  { /* values passed in here allow access to props in other components */}
       <MusicTable songs={songs} getAllSongs={getAllSongs}/>
       <CreateSong getAllSongs={getAllSongs}/>
     </div>
