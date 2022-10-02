@@ -4,7 +4,9 @@ import MusicTable from './Components/MusicTable/MusicTable';
 import CreateSong from './Components/CreateSong/CreateSong';
 import SearchBar from './Components/SearchBar/SearchBar';
 import "./App.css"
+import Modal from 'react-modal'
 
+Modal.setAppElement('#root')
 
 function App() {
 

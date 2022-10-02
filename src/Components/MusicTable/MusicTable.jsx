@@ -1,13 +1,14 @@
 import DeleteButton from "../DeleteButton/DeleteButton";
 import React, { useState } from 'react';
-import Modal from "../Modal/Modal";
-import "./MusicTable.css"
+import "./MusicTable.css";
+import Modal from 'react-modal';
+import UpdateSong from "../UpdateSong/UpdateSong";
 
 
 const MusicTable = (props) => {
 
     
-    const [openModal, setOpenModal] = useState(false);
+const [modalIsOpen, setModalIsOpen] = useState(false)
 
     return ( 
         <div>
@@ -31,8 +32,20 @@ const MusicTable = (props) => {
                                 <td>{song.genre}</td>
                                 <td>{song.release_date}</td>
                                 <td><DeleteButton id={song.id} getAllSongs={props.getAllSongs}/></td>
-                                <td><button className="openModalBtn" onClick={() => {setOpenModal(true)}}>Edit Song</button></td>
-                                <td>{openModal && <Modal closeModal={setOpenModal}/>}</td>
+                                <td>
+                                    <button onClick={() => setModalIsOpen(true)}>Edit Song</button>
+                                    <Modal className="Modal" overlayClassName="Overlay" isOpen={modalIsOpen}>
+                                        <div>
+                                            <div>
+                                                <h2>Edit Song</h2>
+                                                <UpdateSong />
+                                                <br></br>
+                                                <br></br>
+                                                <button onClick={() => setModalIsOpen(false)}>Close</button>
+                                            </div>
+                                        </div>
+                                    </Modal>
+                                </td>
                             </tr>
                         )
                     })}
@@ -43,3 +56,4 @@ const MusicTable = (props) => {
 }
  
 export default MusicTable;
+

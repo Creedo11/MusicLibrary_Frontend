@@ -15,7 +15,7 @@ const [album, setAlbum] = useState('')
 const [genre, setGenre] = useState('')
 const [releaseDate, setReleaseDate] = useState('')
 
-function handleSunmit(event){
+function handleSubmit(event){
     event.preventDefault(); //keeps page from refreshing on submission
     let newSong = {
         title: title,
@@ -30,7 +30,7 @@ function handleSunmit(event){
 
     return ( 
         <div>
-            <form onSubmit={handleSunmit}>
+            <form onSubmit={handleSubmit}>
                 <label>Title</label>
                 <input value={title} onChange={(event)=> setTitle(event.target.value)}/>
                 <label>Artist</label>
