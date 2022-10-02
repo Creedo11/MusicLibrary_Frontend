@@ -3,10 +3,13 @@ import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable';
 import CreateSong from './Components/CreateSong/CreateSong';
 import SearchBar from './Components/SearchBar/SearchBar';
+import "./App.css"
+
 
 function App() {
 
   const [songs, setSongs] = useState([]);
+ 
 
   useEffect(() => {
     getAllSongs();
@@ -19,7 +22,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <SearchBar songs={songs} setSongs={setSongs}getAllSongs={getAllSongs}/>  { /* values passed in here allow access to props in other components */}
       <CreateSong getAllSongs={getAllSongs}/>
       <MusicTable songs={songs} getAllSongs={getAllSongs}/>
