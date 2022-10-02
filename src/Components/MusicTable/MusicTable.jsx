@@ -1,8 +1,12 @@
 import DeleteButton from "../DeleteButton/DeleteButton";
+import React, { useState } from 'react';
+import Modal from "../Modal/Modal";
+
 
 const MusicTable = (props) => {
 
-
+    
+    const [openModal, setOpenModal] = useState(false);
 
     return ( 
         <div>
@@ -26,6 +30,8 @@ const MusicTable = (props) => {
                                 <td>{song.genre}</td>
                                 <td>{song.release_date}</td>
                                 <td><DeleteButton id={song.id} getAllSongs={props.getAllSongs}/></td>
+                                <td><button className="openModalBtn" onClick={() => {setOpenModal(true)}}>Edit Song</button></td>
+                                <td>{openModal && <Modal closeModal={setOpenModal}/>}</td>
                             </tr>
                         )
                     })}

@@ -21,8 +21,8 @@ function App() {
   return (
     <div>
       <SearchBar songs={songs} setSongs={setSongs}getAllSongs={getAllSongs}/>  { /* values passed in here allow access to props in other components */}
-      <MusicTable songs={songs} getAllSongs={getAllSongs}/>
       <CreateSong getAllSongs={getAllSongs}/>
+      <MusicTable songs={songs} getAllSongs={getAllSongs}/>
     </div>
   );
 }
