@@ -8,10 +8,10 @@ const [searchTerm, setSearchTerm] = useState('')
 function searchSongs(event){
     event.preventDefault();
     let response = props.songs.filter((song) =>{
-        if(song.title.includes(searchTerm) ||
-            song.artist.includes(searchTerm) ||
-            song.album.includes(searchTerm) ||
-            song.genre.includes(searchTerm) ||
+        if(song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            song.album.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            song.genre.toLowerCase().includes(searchTerm.toLowerCase()) ||
             song.release_date.includes(searchTerm)){
                 return true;
             }
@@ -26,6 +26,7 @@ function searchSongs(event){
         <form onSubmit={searchSongs}>
             <input placeholder="Search Songs" type="text" value={searchTerm} onChange={(event)=> setSearchTerm(event.target.value)}/>
             <button type="submit">Search</button>
+            <button onClick={props.getAllSongs}>Refresh Table</button>
         </form>
      ); 
 }
