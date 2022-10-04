@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import "./CreateSong.css"
 
 const CreateSong = (props) => {
 
@@ -31,17 +32,17 @@ function handleSubmit(event){
     return ( 
         <div>
             <form onSubmit={handleSubmit}>
-                <label>Title</label>
-                <input value={title} onChange={(event)=> setTitle(event.target.value)}/>
-                <label>Artist</label>
-                <input value={artist} onChange={(event)=> setArtist(event.target.value)}/>
-                <label>Album</label>
-                <input value={album} onChange={(event)=> setAlbum(event.target.value)}/>
-                <label>Genre</label>
-                <input value={genre} onChange={(event)=> setGenre(event.target.value)}/>
-                <label>Release Date</label>
-                <input type="date" value={releaseDate} onChange={(event)=> setReleaseDate(event.target.value)}/>
-                <button type="submit" >Add Song</button>
+                <label className="input_label">Title</label>
+                <input className="input_box" value={title} onChange={(event)=> setTitle(event.target.value)}/>
+                <label className="input_label">Artist</label>
+                <input className="input_box" value={artist} onChange={(event)=> setArtist(event.target.value)}/>
+                <label className="input_label">Album</label>
+                <input className="input_box" value={album} onChange={(event)=> setAlbum(event.target.value)}/>
+                <label className="input_label">Genre</label>
+                <input className="input_box" value={genre} onChange={(event)=> setGenre(event.target.value)}/>
+                <label className="input_label">Release Date</label>
+                <input className="input_box" type="date" value={releaseDate} onChange={(event)=> setReleaseDate(event.target.value)}/>
+                <button className="add_song_btn" type="submit" >Add Song</button>
             </form>
         </div>
      );

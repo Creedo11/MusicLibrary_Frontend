@@ -6,6 +6,8 @@ import SearchBar from './Components/SearchBar/SearchBar';
 import "./App.css"
 import Modal from 'react-modal'
 
+
+
 Modal.setAppElement('#root')
 
 function App() {
@@ -25,8 +27,24 @@ function App() {
 
   return (
     <div className="App">
+      <div class="header_container">
+            <div >
+              <img className="header_image" src="music.gif" alt="music beat" />
+            </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <SearchBar songs={songs} setSongs={setSongs}getAllSongs={getAllSongs}/>  { /* values passed in here allow access to props in other components */}
+      <br></br>
+      <br></br>
+      <br></br>
       <CreateSong getAllSongs={getAllSongs}/>
+      <br></br>
+      <br></br>
+      <br></br>
       <MusicTable songs={songs} getAllSongs={getAllSongs}/>
     </div>
   );

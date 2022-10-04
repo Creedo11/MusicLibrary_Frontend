@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import "./MusicTable.css";
 import Modal from 'react-modal';
 import UpdateSong from "../UpdateSong/UpdateSong";
+import "./MusicTable.css"
+
+
 
 
 const MusicTable = (props) => {
@@ -31,14 +34,13 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
                                 <td>{song.album}</td>
                                 <td>{song.genre}</td>
                                 <td>{song.release_date}</td>
-                                <td><DeleteButton id={song.id} getAllSongs={props.getAllSongs}/></td>
                                 <td>
-                                    <button onClick={() => setModalIsOpen(true)}>Edit Song</button>
-                                    <Modal className="Modal" overlayClassName="Overlay" isOpen={modalIsOpen}>
+                                    <button className="edit_btn" onClick={() => setModalIsOpen(true)}>Edit Song</button>
+                                    <Modal className="Modal" overlayClassName="Overlay" bodyOpenClassName="Body" isOpen={modalIsOpen}>
                                         <div>
                                             <div>
                                                 <h2>Edit Song</h2>
-                                                <UpdateSong />
+                                                <UpdateSong id={song.id} getAllSongs={props.getAllSongs}/>
                                                 <br></br>
                                                 <br></br>
                                                 <button onClick={() => setModalIsOpen(false)}>Close</button>
@@ -46,6 +48,7 @@ const [modalIsOpen, setModalIsOpen] = useState(false)
                                         </div>
                                     </Modal>
                                 </td>
+                                <td><DeleteButton id={song.id} getAllSongs={props.getAllSongs}/></td>
                             </tr>
                         )
                     })}

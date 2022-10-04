@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import "./SearchBar.css"
+
 
 const SearchBar = (props) => {
 
@@ -24,9 +26,9 @@ function searchSongs(event){
 
     return ( 
         <form onSubmit={searchSongs}>
-            <input placeholder="Search Songs" type="text" value={searchTerm} onChange={(event)=> setSearchTerm(event.target.value)}/>
-            <button type="submit">Search</button>
-            <button onClick={props.getAllSongs}>Refresh Table</button>
+            <input className="search_bar" placeholder="Search Songs" type="text" value={searchTerm} onChange={(event)=> setSearchTerm(event.target.value)}/>
+            <button className="search" type="submit">Search</button>
+            <button className="refresh" onClick={props.getAllSongs}>Refresh Table</button>
         </form>
      ); 
 }

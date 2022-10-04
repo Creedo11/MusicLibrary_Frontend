@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./DeleteButton.css"
 
 
 const DeleteButton = (props) => {
@@ -11,7 +12,7 @@ const DeleteButton = (props) => {
     }
 
     return ( 
-        <button onClick={deleteSong}>Delete</button>
+        <button className="delete_btn" onClick={deleteSong}>Delete</button>
      );
 }
  

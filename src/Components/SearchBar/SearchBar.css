@@ -1,0 +1,16 @@
+.search_bar{
+    margin-right: 10px;
+    border-radius: 1px;
+    background-color:rgba(202, 204, 206, 0.768);
+}
+
+.search{
+    margin-right: 10px;
+    border-radius: 1px;
+    background-color:rgba(202, 204, 206, 0.768);
+}
+
+.refresh{
+    border-radius: 1px;
+    background-color:rgba(202, 204, 206, 0.768);
+}
